@@ -61,11 +61,11 @@ extension Runable where Self: OperatorProtocol{
 
 protocol Creator where Self: OperatorProtocol{
   associatedtype OpType: OperatorProtocol & Runable & InferShaperable
-  static func creat(device: MTLDevice, opDesc: OpDesc, inScope: Scope) throws -> OpType
+  static func creat(device: MTLDevice, opDesc: PMOpDesc, inScope: Scope) throws -> OpType
 }
 
 extension Creator where Self: OperatorProtocol {
-  static func creat(device: MTLDevice, opDesc: OpDesc, inScope: Scope) throws -> OpType {
+  static func creat(device: MTLDevice, opDesc: PMOpDesc, inScope: Scope) throws -> OpType {
     do {
       return try OpType.provide(device:device, opDesc: opDesc, inScope: inScope)
     } catch let error {
@@ -89,11 +89,11 @@ protocol OperatorProtocol {
   var attrs: [String : Attr] { get }
   var para: ParamType { get }
   var kernel: KerType { get }
-  init(device: MTLDevice, opDesc: OpDesc, inScope: Scope) throws
+  init(device: MTLDevice, opDesc: PMOpDesc, inScope: Scope) throws
 }
 
 extension OperatorProtocol {
-  static func provide(device: MTLDevice, opDesc: OpDesc, inScope: Scope) throws -> Self {
+  static func provide(device: MTLDevice, opDesc: PMOpDesc, inScope: Scope) throws -> Self {
     do {
       return try Self.init(device: device, opDesc: opDesc, inScope: inScope)
     } catch let error {
@@ -113,7 +113,7 @@ class Operator <KernelType:  Computable , ParameterType>: OperatorProtocol where
   let para: ParamType
   let scope: Scope
   var kernel: KerType
-  required init(device: MTLDevice, opDesc: OpDesc, inScope: Scope) throws {
+  required init(device: MTLDevice, opDesc: PMOpDesc, inScope: Scope) throws {
 //    print("create op: \(opDesc.type)")
     type = opDesc.type
     scope = inScope

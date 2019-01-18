@@ -18,6 +18,7 @@
 #import "CPUCompute.h"
 #import "PaddleMobileGPU.h"
 #import <UIKit/UIKit.h>
+#import <paddle_mobile/Framework.pbobjc.h>
 
 //! Project version number for paddle_mobile.
 //FOUNDATION_EXPORT double paddle_mobileVersionNumber;

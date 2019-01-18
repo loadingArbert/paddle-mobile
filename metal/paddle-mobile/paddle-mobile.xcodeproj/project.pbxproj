@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45BF09DF21F0B14600C3389E /* Framework.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 45BF09DD21F0B14600C3389E /* Framework.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BF09E021F0B14600C3389E /* Framework.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BF09DE21F0B14600C3389E /* Framework.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4AA1EA862146625E00D0F791 /* BilinearInterpOp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1EA852146625E00D0F791 /* BilinearInterpOp.swift */; };
 		4AA1EA88214662BD00D0F791 /* BilinearInterpKernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1EA87214662BD00D0F791 /* BilinearInterpKernel.swift */; };
 		4AA1EA8A2146631C00D0F791 /* BilinearInterp.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1EA892146631C00D0F791 /* BilinearInterp.metal */; };
@@ -50,15 +52,14 @@
 		FC039BAB20E11CBC0081E9F8 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BA620E11CBC0081E9F8 /* Operator.swift */; };
 		FC039BAC20E11CBC0081E9F8 /* BatchNormOp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BA720E11CBC0081E9F8 /* BatchNormOp.swift */; };
 		FC039BAD20E11CBC0081E9F8 /* ReluOp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BA820E11CBC0081E9F8 /* ReluOp.swift */; };
-		FC039BB820E11CC20081E9F8 /* framework.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BAF20E11CC20081E9F8 /* framework.pb.swift */; };
 		FC039BB920E11CC20081E9F8 /* Scope.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BB020E11CC20081E9F8 /* Scope.swift */; };
 		FC039BBA20E11CC20081E9F8 /* TensorDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BB120E11CC20081E9F8 /* TensorDesc.swift */; };
-		FC039BBB20E11CC20081E9F8 /* ProgramDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BB220E11CC20081E9F8 /* ProgramDesc.swift */; };
-		FC039BBC20E11CC20081E9F8 /* VarDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BB320E11CC20081E9F8 /* VarDesc.swift */; };
+		FC039BBB20E11CC20081E9F8 /* PMProgramDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BB220E11CC20081E9F8 /* PMProgramDesc.swift */; };
+		FC039BBC20E11CC20081E9F8 /* PMVarDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BB320E11CC20081E9F8 /* PMVarDesc.swift */; };
 		FC039BBD20E11CC20081E9F8 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BB420E11CC20081E9F8 /* Program.swift */; };
-		FC039BBE20E11CC20081E9F8 /* OpDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BB520E11CC20081E9F8 /* OpDesc.swift */; };
+		FC039BBE20E11CC20081E9F8 /* PMOpDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BB520E11CC20081E9F8 /* PMOpDesc.swift */; };
 		FC039BBF20E11CC20081E9F8 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BB620E11CC20081E9F8 /* Attribute.swift */; };
-		FC039BC020E11CC20081E9F8 /* BlockDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BB720E11CC20081E9F8 /* BlockDesc.swift */; };
+		FC039BC020E11CC20081E9F8 /* PMBlockDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC039BB720E11CC20081E9F8 /* PMBlockDesc.swift */; };
 		FC0E2DBA20EE3B8D009C1FAC /* ReluKernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E2DB920EE3B8D009C1FAC /* ReluKernel.swift */; };
 		FC0E2DBC20EE45FE009C1FAC /* ConvKernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E2DBB20EE45FE009C1FAC /* ConvKernel.swift */; };
 		FC0E2DBE20EE460D009C1FAC /* BatchNormKernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E2DBD20EE460D009C1FAC /* BatchNormKernel.swift */; };
@@ -142,6 +143,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45BF09DD21F0B14600C3389E /* Framework.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Framework.pbobjc.h; sourceTree = "<group>"; };
+		45BF09DE21F0B14600C3389E /* Framework.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Framework.pbobjc.m; sourceTree = "<group>"; };
 		4AA1EA852146625E00D0F791 /* BilinearInterpOp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BilinearInterpOp.swift; sourceTree = "<group>"; };
 		4AA1EA87214662BD00D0F791 /* BilinearInterpKernel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BilinearInterpKernel.swift; sourceTree = "<group>"; };
 		4AA1EA892146631C00D0F791 /* BilinearInterp.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = BilinearInterp.metal; sourceTree = "<group>"; };
@@ -189,15 +192,14 @@
 		FC039BA620E11CBC0081E9F8 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		FC039BA720E11CBC0081E9F8 /* BatchNormOp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatchNormOp.swift; sourceTree = "<group>"; };
 		FC039BA820E11CBC0081E9F8 /* ReluOp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReluOp.swift; sourceTree = "<group>"; };
-		FC039BAF20E11CC20081E9F8 /* framework.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = framework.pb.swift; sourceTree = "<group>"; };
 		FC039BB020E11CC20081E9F8 /* Scope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scope.swift; sourceTree = "<group>"; };
 		FC039BB120E11CC20081E9F8 /* TensorDesc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TensorDesc.swift; sourceTree = "<group>"; };
-		FC039BB220E11CC20081E9F8 /* ProgramDesc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramDesc.swift; sourceTree = "<group>"; };
-		FC039BB320E11CC20081E9F8 /* VarDesc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VarDesc.swift; sourceTree = "<group>"; };
+		FC039BB220E11CC20081E9F8 /* PMProgramDesc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMProgramDesc.swift; sourceTree = "<group>"; };
+		FC039BB320E11CC20081E9F8 /* PMVarDesc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMVarDesc.swift; sourceTree = "<group>"; };
 		FC039BB420E11CC20081E9F8 /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
-		FC039BB520E11CC20081E9F8 /* OpDesc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpDesc.swift; sourceTree = "<group>"; };
+		FC039BB520E11CC20081E9F8 /* PMOpDesc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMOpDesc.swift; sourceTree = "<group>"; };
 		FC039BB620E11CC20081E9F8 /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
-		FC039BB720E11CC20081E9F8 /* BlockDesc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockDesc.swift; sourceTree = "<group>"; };
+		FC039BB720E11CC20081E9F8 /* PMBlockDesc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMBlockDesc.swift; sourceTree = "<group>"; };
 		FC0E2DB920EE3B8D009C1FAC /* ReluKernel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReluKernel.swift; sourceTree = "<group>"; };
 		FC0E2DBB20EE45FE009C1FAC /* ConvKernel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvKernel.swift; sourceTree = "<group>"; };
 		FC0E2DBD20EE460D009C1FAC /* BatchNormKernel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchNormKernel.swift; sourceTree = "<group>"; };
@@ -339,6 +341,8 @@
 		FC039B6C20E11C3C0081E9F8 /* paddle-mobile */ = {
 			isa = PBXGroup;
 			children = (
+				45BF09DD21F0B14600C3389E /* Framework.pbobjc.h */,
+				45BF09DE21F0B14600C3389E /* Framework.pbobjc.m */,
 				C28FDF8221B7858F0054EFAC /* MobileNetCombined.swift */,
 				C28FDF8321B7858F0054EFAC /* YoloNet.swift */,
 				FCE9D7B6214F869000B520C3 /* Net.swift */,
@@ -348,8 +352,8 @@
 				FC292C7E214255BC00CF622F /* MobileNetSSD.swift */,
 				FC292C7C214255BC00CF622F /* CPUCompute.mm */,
 				FC292C7D214255BC00CF622F /* CPUCompute.h */,
-				FC292C5521421B4600CF622F /* PaddleMobileGPU.m */,
 				FC292C5321421B2E00CF622F /* PaddleMobileGPU.h */,
+				FC292C5521421B4600CF622F /* PaddleMobileGPU.m */,
 				FC4FD9762140E4920073E130 /* CPU */,
 				FC4FD9742140E1DE0073E130 /* PaddleMobile.swift */,
 				FC039BAE20E11CC20081E9F8 /* Program */,
@@ -427,15 +431,14 @@
 		FC039BAE20E11CC20081E9F8 /* Program */ = {
 			isa = PBXGroup;
 			children = (
-				FC039BAF20E11CC20081E9F8 /* framework.pb.swift */,
 				FC039BB020E11CC20081E9F8 /* Scope.swift */,
 				FC039BB120E11CC20081E9F8 /* TensorDesc.swift */,
-				FC039BB220E11CC20081E9F8 /* ProgramDesc.swift */,
-				FC039BB320E11CC20081E9F8 /* VarDesc.swift */,
+				FC039BB220E11CC20081E9F8 /* PMProgramDesc.swift */,
+				FC039BB320E11CC20081E9F8 /* PMVarDesc.swift */,
 				FC039BB420E11CC20081E9F8 /* Program.swift */,
-				FC039BB520E11CC20081E9F8 /* OpDesc.swift */,
+				FC039BB520E11CC20081E9F8 /* PMOpDesc.swift */,
 				FC039BB620E11CC20081E9F8 /* Attribute.swift */,
-				FC039BB720E11CC20081E9F8 /* BlockDesc.swift */,
+				FC039BB720E11CC20081E9F8 /* PMBlockDesc.swift */,
 				FC4CB74A20F12C30007C0C6D /* ProgramOptimize.swift */,
 			);
 			path = Program;
@@ -555,6 +558,7 @@
 				FC292C85214257CB00CF622F /* CPUCompute.h in Headers */,
 				FC292C5421421B2F00CF622F /* PaddleMobileGPU.h in Headers */,
 				4AA1EA9E2148D6F900D0F791 /* ConcatKernel.inc.metal in Headers */,
+				45BF09DF21F0B14600C3389E /* Framework.pbobjc.h in Headers */,
 				FC039B6F20E11C3C0081E9F8 /* paddle_mobile.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,6 +575,7 @@
 				FC039B6620E11C3C0081E9F8 /* Frameworks */,
 				FC039B6720E11C3C0081E9F8 /* Headers */,
 				FC039B6820E11C3C0081E9F8 /* Resources */,
+				598A24D30797AF466B2AFE39 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -624,6 +629,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		598A24D30797AF466B2AFE39 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-paddle-mobile/Pods-paddle-mobile-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AF33BB8D0770A77AC22B5EF4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -639,7 +663,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -668,7 +692,7 @@
 				FCD04E7020F31B720007374F /* ReshapeKernel.swift in Sources */,
 				FCE3A1B12153E90F00C37CDE /* ElementwiseAddPreluKernel.inc.metal in Sources */,
 				FCD04E7220F343420007374F /* ConvAddOp.swift in Sources */,
-				FC039BBB20E11CC20081E9F8 /* ProgramDesc.swift in Sources */,
+				FC039BBB20E11CC20081E9F8 /* PMProgramDesc.swift in Sources */,
 				FCE3A1AB2153DE8C00C37CDE /* ConvAddAddPreluKernel.swift in Sources */,
 				FC9D037920E229E4000F735A /* OpParam.swift in Sources */,
 				FC3602CC2108819F00FACB58 /* PaddleMobileUnitTest.swift in Sources */,
@@ -696,7 +720,6 @@
 				FC1B16B320EC9A4F00678B91 /* Kernels.metal in Sources */,
 				FC039BBA20E11CC20081E9F8 /* TensorDesc.swift in Sources */,
 				FC039BA020E11CB20081E9F8 /* Dim.swift in Sources */,
-				FC039BB820E11CC20081E9F8 /* framework.pb.swift in Sources */,
 				C28FDF8521B7858F0054EFAC /* YoloNet.swift in Sources */,
 				FC039B9920E11C9A0081E9F8 /* Types.swift in Sources */,
 				FC4CB74920F0B954007C0C6D /* ConvKernel.metal in Sources */,
@@ -721,12 +744,13 @@
 				FCE9D7B9214FAA4800B520C3 /* NMSFetchResultKernel.metal in Sources */,
 				FC039BAC20E11CBC0081E9F8 /* BatchNormOp.swift in Sources */,
 				FCBCCC6F2123097100D94F7E /* MulticlassNMSOp.swift in Sources */,
-				FC039BBC20E11CC20081E9F8 /* VarDesc.swift in Sources */,
+				FC039BBC20E11CC20081E9F8 /* PMVarDesc.swift in Sources */,
 				FC292C872142624800CF622F /* Genet.swift in Sources */,
 				FC803BC5214CB8F00094B8E5 /* ConvAddPrelu.inc.metal in Sources */,
 				4AF928822135673D005B6C3A /* ConcatKernel.metal in Sources */,
 				FCBCCC632122FCC000D94F7E /* TransposeKernel.swift in Sources */,
 				FCBCCC71212309A700D94F7E /* MulticlassNMSKernel.swift in Sources */,
+				45BF09E021F0B14600C3389E /* Framework.pbobjc.m in Sources */,
 				FCDC0FEB21099A1D00DC9EFB /* Tools.swift in Sources */,
 				FC0E2DBA20EE3B8D009C1FAC /* ReluKernel.swift in Sources */,
 				4AA1EA862146625E00D0F791 /* BilinearInterpOp.swift in Sources */,
@@ -761,14 +785,14 @@
 				FCE3A1A92153DE5100C37CDE /* ConvAddAddPreluOp.swift in Sources */,
 				FC5163F620EF556E00636C28 /* Texture2DTo2DArrayKernel.swift in Sources */,
 				FCE3A1AD2153E8BA00C37CDE /* ElementwiseAddPreluOp.swift in Sources */,
-				FC039BC020E11CC20081E9F8 /* BlockDesc.swift in Sources */,
+				FC039BC020E11CC20081E9F8 /* PMBlockDesc.swift in Sources */,
 				FC803BC3214CB79C0094B8E5 /* ConvAddPreluKernel.metal in Sources */,
 				4AA1EA90214664CD00D0F791 /* Split.metal in Sources */,
 				FCD04E6820F315020007374F /* PoolKernel.swift in Sources */,
 				FC0226582138F38D00F395E2 /* PoolKernel.metal in Sources */,
 				FC039BAD20E11CBC0081E9F8 /* ReluOp.swift in Sources */,
 				FCBCCC572122F41300D94F7E /* DwConvBNReluOp.swift in Sources */,
-				FC039BBE20E11CC20081E9F8 /* OpDesc.swift in Sources */,
+				FC039BBE20E11CC20081E9F8 /* PMOpDesc.swift in Sources */,
 				4AA1EA88214662BD00D0F791 /* BilinearInterpKernel.swift in Sources */,
 				FC039B9720E11C9A0081E9F8 /* Extensions.swift in Sources */,
 			);
@@ -905,7 +929,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AL7VT7FHH8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -924,7 +948,7 @@
 				);
 				MACH_O_TYPE = mh_dylib;
 				MTL_LANGUAGE_REVISION = UseDeploymentTarget;
-				PRODUCT_BUNDLE_IDENTIFIER = "orange.paddle-mobile";
+				PRODUCT_BUNDLE_IDENTIFIER = "orange.paddle-mobile.chge";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -942,7 +966,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AL7VT7FHH8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -961,7 +985,7 @@
 				);
 				MACH_O_TYPE = mh_dylib;
 				MTL_LANGUAGE_REVISION = UseDeploymentTarget;
-				PRODUCT_BUNDLE_IDENTIFIER = "orange.paddle-mobile";
+				PRODUCT_BUNDLE_IDENTIFIER = "orange.paddle-mobile.chge";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

@@ -10,7 +10,8 @@ end
 
 target 'paddle-mobile' do
 	project 'paddle-mobile/paddle-mobile.xcodeproj'
-	pod 'SwiftProtobuf', '~> 1.0'
+    # pod 'SwiftProtobuf', '~> 1.0'
+    pod 'Protobuf', '~> 3.0.0'
 end
 
 target 'paddle-mobile-unit-test' do

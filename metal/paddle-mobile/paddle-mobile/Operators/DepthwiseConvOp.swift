@@ -18,7 +18,7 @@ class DepthConvOp<P: PrecisionType>: Operator<ConvKernel<P>, ConvParam<P>>, Runa
 
   typealias OpType = DepthConvOp<P>
 
-  required init(device: MTLDevice, opDesc: OpDesc, inScope: Scope) throws {
+  required init(device: MTLDevice, opDesc: PMOpDesc, inScope: Scope) throws {
     do {
       try super.init(device: device, opDesc: opDesc, inScope: inScope)
     } catch let error {

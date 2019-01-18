@@ -16,14 +16,14 @@ import Foundation
 
 public class Program {
     let paramPath: String
-    let programDesc: ProgramDesc
+    let programDesc: PMProgramDesc
     let scope: Scope
-    init(inProgramDesc: ProgramDesc, inParamPath: String, inScope: Scope) {
+    init(inProgramDesc: PMProgramDesc, inParamPath: String, inScope: Scope) {
         programDesc = inProgramDesc
         paramPath = inParamPath
         scope = inScope
     }
-    init(inProgramDesc: ProgramDesc, inScope: Scope) {
+    init(inProgramDesc: PMProgramDesc, inScope: Scope) {
         programDesc = inProgramDesc
         scope = inScope
         paramPath = ""
