@@ -45,6 +45,19 @@ inline ActivationType GetActivationType(const std::string &type) {
   PADDLE_MOBILE_THROW_EXCEPTION("Not support activation type.");
 }
 
+inline ActivationType GetActivationType(const int type) {
+  if (type == 0) {
+    return ActivationType::IDENTITY;
+  } else if (type == 1) {
+    return ActivationType::SIGMOID;
+  } else if (type == 2) {
+    return ActivationType::TANH;
+  } else if (type == 3) {
+    return ActivationType::RELU;
+  }
+  PADDLE_MOBILE_THROW_EXCEPTION("Not support activation type.");
+}
+
 #if defined(__ARM_NEON__) || defined(__ARM_NEON)
 template <ActivationType Act = IDENTITY>
 inline float32x4_t vActiveq_f32(const float32x4_t &x) {
@@ -86,6 +99,11 @@ inline float32x4_t vActiveq_f32<TANH>(const float32x4_t &x) {
   __out = vmulq_n_f32(__out, 2.f);
   return vsubq_f32(__out, __one);
 }
+
+template <>
+inline float32x4_t vActiveq_f32<LOG>(const float32x4_t &x) {
+  return log_ps(x);
+}
 #endif
 
 template <ActivationType Act = IDENTITY>
@@ -117,6 +135,11 @@ inline float Active<TANH>(const float &x) {
   //  tmp = (tmp > EXP_MAX_INPUT) ? EXP_MAX_INPUT : tmp;
   //  return (2.f / (1.f + exp(tmp))) - 1.f;
   return 2.f / (1.f + exp(-2.f * x)) - 1.f;
+}
+
+template <>
+inline float Active<LOG>(const float &x) {
+  return log(x);
 }
 
 }  // namespace math

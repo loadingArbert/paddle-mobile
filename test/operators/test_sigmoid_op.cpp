@@ -12,15 +12,70 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License. */
 
-#include "../test_helper.h"
+#include <cmath>
+#include <iostream>
+#include "../test_include.h"
+#include "operators/activation_op.h"
+
+namespace paddle_mobile {
+
+void Sigmoid(const framework::Tensor *X, framework::Tensor *Y) {
+  const float *x = X->data<float>();
+  float *y = Y->mutable_data<float>();
+
+  for (int i = 0; i < X->numel(); ++i) {
+    y[i] = 1.f / (1.f + exp(-x[i]));
+  }
+}
+
+int TestSigmoidOp(const std::vector<int> input_shape) {
+  framework::DDim dims = framework::make_ddim(input_shape);
+  VariableNameMap inputs;
+  VariableNameMap outputs;
+  auto scope = std::make_shared<framework::Scope>();
+  inputs["X"] = std::vector<std::string>({"input"});
+  outputs["Out"] = std::vector<std::string>({"output"});
+
+  auto input_var = scope.get()->Var("input");
+  auto input = input_var->template GetMutable<framework::LoDTensor>();
+  SetupTensor<float>(input, dims, -100.0, 100.0);
+
+  auto output_var = scope.get()->Var("output");
+
+  framework::AttributeMap attrs;
+  auto *op = new operators::SigmoidOp<CPU, float>("sigmoid", inputs, outputs,
+                                                  attrs, scope);
+  op->InferShape();
+  op->Init();
+  op->Run();
+
+  auto output = output_var->template Get<framework::LoDTensor>();
+
+  framework::Tensor output_cmp;
+  float *output_cmp_data = output_cmp.mutable_data<float>(output->dims());
+  Sigmoid(input, &output_cmp);
+
+  const float *output_data = output->data<float>();
+  for (int i = 0; i < output->numel(); ++i) {
+    float gap = output_data[i] - output_cmp_data[i];
+    if (std::abs(gap / (output_data[i] + 1e-5)) > 1e-3) {
+      LOG(kLOG_INFO) << "output_data[" << i << "] = " << output_data[i]
+                     << ", output_cmp_data[" << i
+                     << "] = " << output_cmp_data[i];
+      delete op;
+      exit(1);
+    }
+  }
+  delete op;
+  return 0;
+}
+
+}  // namespace paddle_mobile
 
 int main() {
-  paddle_mobile::framework::Tensor input;
-  paddle_mobile::framework::Tensor output;
-  SetupTensor<float>(&input, {1, 4, 60, 60}, static_cast<float>(0),
-                     static_cast<float>(1));
-
-  auto out_ddim = paddle_mobile::framework::make_ddim({1, 4, 60, 60});
-  output.Resize(out_ddim);
+  paddle_mobile::TestSigmoidOp({1, 1, 2, 3});
+  paddle_mobile::TestSigmoidOp({1, 3, 11, 22});
+  paddle_mobile::TestSigmoidOp({1, 32, 112, 112});
+  std::cout << "test sigmoid op pass." << std::endl;
   return 0;
 }

@@ -100,6 +100,7 @@ enum ActivationType {
   LEAKY_RELU = 4,
   TANH = 5,
   SIGMOID = 6,
+  LOG = 7,
 };
 
 enum PoolingType {
@@ -107,6 +108,10 @@ enum PoolingType {
   AVG = 1,
   SUM = 2,
   FIRST = 3,
+};
+
+struct PaddleMobileConfigInternal {
+  bool load_when_predict = false;
 };
 
 extern const char *G_OP_TYPE_CONV;
@@ -155,6 +160,9 @@ extern const char *G_OP_TYPE_PRELU;
 extern const char *G_OP_TYPE_SUM;
 extern const char *G_OP_TYPE_TOP_K;
 extern const char *G_OP_TYPE_CAST;
+extern const char *G_OP_TYPE_LOG;
+extern const char *G_OP_TYPE_LOD_RESET;
+extern const char *G_OP_TYPE_LESS_THAN;
 
 extern const char *G_OP_TYPE_QUANTIZE;
 extern const char *G_OP_TYPE_DEQUANTIZE;

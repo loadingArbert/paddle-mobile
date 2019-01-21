@@ -66,6 +66,7 @@ const char *G_OP_TYPE_CONV_TRANSPOSE = "conv2d_transpose";
 const char *G_OP_TYPE_PRELU = "prelu";
 const char *G_OP_TYPE_LOOKUP_TABLE = "lookup_table";
 const char *G_OP_TYPE_GRU = "gru";
+const char *G_OP_TYPE_GRU_UNIT = "gru_unit";
 const char *G_OP_TYPE_CRF = "crf_decoding";
 const char *G_OP_TYPE_BILINEAR_INTERP = "bilinear_interp";
 const char *G_OP_TYPE_FLATTEN = "flatten";
@@ -73,6 +74,9 @@ const char *G_OP_TYPE_SHAPE = "shape";
 const char *G_OP_TYPE_SUM = "sum";
 const char *G_OP_TYPE_TOP_K = "top_k";
 const char *G_OP_TYPE_CAST = "cast";
+const char *G_OP_TYPE_LOG = "log";
+const char *G_OP_TYPE_LOD_RESET = "lod_reset";
+const char *G_OP_TYPE_LESS_THAN = "less_than";
 
 const char *G_OP_TYPE_QUANTIZE = "quantize";
 const char *G_OP_TYPE_DEQUANTIZE = "dequantize";
@@ -146,6 +150,9 @@ std::unordered_map<
         {G_OP_TYPE_GRU,
          {{"Input", "H0", "Weight", "Bias"},
           {"BatchGate", "BatchResetHiddenPrev", "BatchHidden", "Hidden"}}},
+        {G_OP_TYPE_GRU_UNIT,
+         {{"Input", "HiddenPrev", "Weight", "Bias"},
+          {"Gate", "ResetHiddenPrev", "Hidden"}}},
         {G_OP_TYPE_CRF, {{"Emission", "Transition", "Label"}, {"ViterbiPath"}}},
         {G_OP_TYPE_BILINEAR_INTERP, {{"OutSize", "X"}, {"Out"}}},
         {G_OP_TYPE_FLATTEN, {{"X"}, {"Out"}}},
@@ -171,5 +178,8 @@ std::unordered_map<
         {G_OP_TYPE_SEQUENCE_EXPAND, {{"X", "Y"}, {"Out"}}},
         {G_OP_TYPE_SEQUENCE_POOL, {{"X"}, {"Out"}}},
         {G_OP_TYPE_SEQUENCE_SOFTMAX, {{"X"}, {"Out"}}},
-        {G_OP_TYPE_NORM, {{"X"}, {"Out", "Norm"}}}};
+        {G_OP_TYPE_NORM, {{"X"}, {"Out", "Norm"}}},
+        {G_OP_TYPE_LOG, {{"X"}, {"Out"}}},
+        {G_OP_TYPE_LOD_RESET, {{"X", "Y"}, {"Out"}}},
+        {G_OP_TYPE_LESS_THAN, {{"X", "Y"}, {"Out"}}}};
 }  // namespace paddle_mobile
